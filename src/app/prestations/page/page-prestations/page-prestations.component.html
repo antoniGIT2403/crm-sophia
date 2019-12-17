@@ -1,1 +1,23 @@
-<p>page-prestations works!</p>
+<div class="table-responsive" ></div>
+<table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let header of collectionTh" scope="col">{{header}}</th >
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let itemNikki of collection">
+     
+
+        <td scope="col">{{ itemNikki.typePresta }}</td>
+        <td scope="col">{{ itemNikki.client }}</td>
+        <td scope="col">{{ itemNikki.tjmHt }}</td>
+        <td scope="col">{{ itemNikki.tva }}</td>
+        <td scope="col">{{ itemNikki.nbJours }}</td>
+        <td scope="col">{{ itemNikki.state }}</td>
+        <td scope="col">{{ itemNikki.totalHt() }}</td>
+        <td scope="col">{{ itemNikki.totalTtc() }}</td>
+      </tr>
+   
+    </tbody>

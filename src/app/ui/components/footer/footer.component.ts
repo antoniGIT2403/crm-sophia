@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  footer:string;
+  footer: string;
   constructor() { }
 
   ngOnInit() {
-    this.footer="m2i formation"
+    this.footer = 'm2i formation';
   }
 
 }
