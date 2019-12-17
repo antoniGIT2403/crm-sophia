@@ -15,9 +15,21 @@
         <td scope="col">{{ itemNikki.tjmHt | currency  : 'EUR'}}</td>
         <td scope="col">{{ itemNikki.tva }}</td>
         <td scope="col">{{ itemNikki.nbJours }}</td>
-        <td scope="col">{{ itemNikki.state }}</td>
+        
         <td scope="col">{{ itemNikki | total | currency : 'EUR' }}</td>
         <td scope="col">{{ itemNikki | total: 'ttc' | currency : 'EUR' }}</td>
+        
+
+        <td  scope="col" [appState]='itemNikki.state'>
+<select name="" id="">
+<option  *ngFor="let state of states | keyvalue" [value]="state.value" [selected]="state.value === itemNikki.state">
+{{ state.value }}
+</option>
+
+
+</select>
+
+        </td>
       </tr>
    
     </tbody>
