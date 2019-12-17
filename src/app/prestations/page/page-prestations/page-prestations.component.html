@@ -12,12 +12,12 @@
 
         <td scope="col">{{ itemNikki.typePresta }}</td>
         <td scope="col">{{ itemNikki.client }}</td>
-        <td scope="col">{{ itemNikki.tjmHt }}</td>
+        <td scope="col">{{ itemNikki.tjmHt | currency  : 'EUR'}}</td>
         <td scope="col">{{ itemNikki.tva }}</td>
         <td scope="col">{{ itemNikki.nbJours }}</td>
         <td scope="col">{{ itemNikki.state }}</td>
-        <td scope="col">{{ itemNikki.totalHt() }}</td>
-        <td scope="col">{{ itemNikki.totalTtc() }}</td>
+        <td scope="col">{{ itemNikki | total | currency : 'EUR' }}</td>
+        <td scope="col">{{ itemNikki | total: 'ttc' | currency : 'EUR' }}</td>
       </tr>
    
     </tbody>
