@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "library": [
+        "dist/library"
+      ],
+      "library/*": [
+        "dist/library/*"
+      ],
+      "graphik": [
+        "dist/graphik"
+      ],
+      "graphik/*": [
+        "dist/graphik/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
