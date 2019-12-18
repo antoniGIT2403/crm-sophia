@@ -7,7 +7,7 @@
       "tjmHt": 1200,
       "nbJours": 10,
       "tva": 20,
-      "state": "Inactif",
+      "state": "Confirmé",
       "name": "Antoni",
       "email": "Antoni@gmail.com",
       "image": "some comment"
@@ -19,7 +19,7 @@
       "tjmHt": 1200,
       "nbJours": 20,
       "tva": 20,
-      "state": "Option",
+      "state": "Confirmé",
       "name": "aaaaaa",
       "email": "toto@gmail.com",
       "image": "zzzz"
@@ -30,15 +30,36 @@
       "id": 1,
       "name": "Antoni",
       "email": "Antoni@gmail.com",
-      "image": "./../../../../assets/img/logo.png",
+      "image": "./../../../../assets/img/IMG-3347.JPG",
       "state": "Actif"
     },
     {
       "id": 2,
+      "name": "chris",
+      "email": "Antoni@gmail.com",
+      "image": "./../../../../assets/img/IMG-3348.JPG",
+      "state": "Inactif"
+    },
+    {
+      "id": 3,
+      "name": "Marvin",
+      "email": "Antoni@gmail.com",
+      "image": "./../../../../assets/img/IMG-3349.JPG",
+      "state": "Actif"
+    },
+    {
+      "id": 4,
+      "name": "cedric",
+      "email": "Antoni@gmail.com",
+      "image": "./../../../../assets/img/IMG-3350.JPG",
+      "state": "Inactif"
+    },
+    {
+      "id": 5,
       "name": "DieuDonné",
       "email": "DieuDonné@gmail.com",
-      "image": "./../../../../assets/img/logo.png",
-      "state": "Inactif"
+      "image": "./../../../../assets/img/IMG-3350.JPG",
+      "state": "Actif"
     }
   ]
 }

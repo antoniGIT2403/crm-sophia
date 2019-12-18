@@ -10,9 +10,7 @@ export const header: string[] = [
   'Profil' ,
   'Name' ,
      'Email' ,
-
        'State' ,
-
 
  ]
 @Component({

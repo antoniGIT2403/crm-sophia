@@ -3,7 +3,7 @@
 
   <tr *ngFor="let itemNikki of collection">
 
-    <td scope="col"><img src="./../../../../assets/img/logo.png" alt="Niki"></td>
+    <td scope="col"><img [src]="itemNikki.image" alt="Niki"></td>
       <td scope="col">{{ itemNikki.name }}</td>
       <td scope="col">{{ itemNikki.email }}</td>
 

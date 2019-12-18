@@ -35,7 +35,7 @@ export class ClientsService {
         //destructuration : copy colle toute les propriété pour les mettres dans un autre obj
         obj.state = data;
 
-        return this.http.patch(`${this.urlApi}/prestations/${item.id}`,obj);
+        return this.http.patch(`${this.urlApi}/Clients/${item.id}`,obj);
       }
 
 }
