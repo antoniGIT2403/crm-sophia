@@ -1,7 +1,7 @@
 <coderbase-ui>
-  <div header>
+  <ng-container header>
     <app-header></app-header>
-  </div>
+  </ng-container>
   <div nav>
     <app-nav></app-nav>
   </div>
@@ -12,3 +12,15 @@
     <app-footer></app-footer>
   </div>
 </coderbase-ui>
+
+
+
+<!--
+  c'est fait comme ca coter coderbaseui  utiliser la projection avec les prorités custom (content, header etc)
+  <header>
+  <ng-content select="[header]"> </ng-content>
+</header>
+ng container -> fait la meme chose mais ne créer pas une div en plus,allège le dom
+
+
+-->

@@ -1,0 +1,11 @@
+@import 'theme';
+.state-actif {
+  background: $color-error;
+}
+.state-inactif {
+  background: $color3;
+}
+
+img{
+  width: 80px;
+}

@@ -1,10 +1,44 @@
 {
   "prestations": [
-    { "id": 1, "typePresta": "Formation", "client": "Modis", "tjmHt": 1200, "nbJours": 10, "tva": 20, "state": "Option" },
-    { "id": 2, "typePresta": "Coaching", "client": "Capgemini", "tjmHt": 1200, "nbJours": 20, "tva": 20, "state": "Confirmé" }
+    {
+      "id": 1,
+      "typePresta": "Formation",
+      "client": "Modis",
+      "tjmHt": 1200,
+      "nbJours": 10,
+      "tva": 20,
+      "state": "Inactif",
+      "name": "Antoni",
+      "email": "Antoni@gmail.com",
+      "image": "some comment"
+    },
+    {
+      "id": 2,
+      "typePresta": "Coaching",
+      "client": "Capgemini",
+      "tjmHt": 1200,
+      "nbJours": 20,
+      "tva": 20,
+      "state": "Option",
+      "name": "aaaaaa",
+      "email": "toto@gmail.com",
+      "image": "zzzz"
+    }
   ],
   "clients": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "name": "Antoni",
+      "email": "Antoni@gmail.com",
+      "image": "./../../../../assets/img/logo.png",
+      "state": "Actif"
+    },
+    {
+      "id": 2,
+      "name": "DieuDonné",
+      "email": "DieuDonné@gmail.com",
+      "image": "./../../../../assets/img/logo.png",
+      "state": "Inactif"
+    }
   ]
 }
-

@@ -1,1 +1,27 @@
-<p>page-clients works!</p>
+<app-tableau-light [collectionTh]="collectionTh">
+
+
+  <tr *ngFor="let itemNikki of collection">
+
+    <td scope="col"><img src="./../../../../assets/img/logo.png" alt="Niki"></td>
+      <td scope="col">{{ itemNikki.name }}</td>
+      <td scope="col">{{ itemNikki.email }}</td>
+
+
+
+      <td scope="col" [appState]='itemNikki.state'>
+          <select name="" id="" (change)='changeState(itemNikki,$event)'>
+              <option *ngFor="let state of states | keyvalue" [value]="state.value"
+                  [selected]="state.value === itemNikki.state">
+                  {{ state.value }}
+              </option>
+
+
+          </select>
+
+      </td>
+  </tr>
+
+
+</app-tableau-light>
+
