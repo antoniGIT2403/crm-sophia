@@ -27,11 +27,14 @@ export class PageClientsComponent implements OnInit {
   public obs$: any;
   public states = StateClient;
   private sub: Subscription;
-
+  title: string;
+  subtitle: string;
 
   constructor(private cs: ClientsService) { }
 
   ngOnInit() {
+    this.title = 'Prestation';
+    this.subtitle = 'Toutes les prez';
     this.cs.collection.subscribe((data) => {
         this.collection = data;
     })

@@ -23,3 +23,18 @@
     background: $color-success;
   }
 }
+
+app-template-a {
+  .tableau-dark {
+    .state-option {
+      background: $color2;
+    }
+  }
+}
+app-template-b {
+  .tableau-dark {
+    .state-option {
+      background: $color1;
+    }
+  }
+}

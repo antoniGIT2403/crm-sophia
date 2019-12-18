@@ -31,11 +31,15 @@ export class PagePrestationsComponent implements OnInit {
     public obs$: any;
     public states = State;
     private sub: Subscription;
+    title: string;
+    subtitle: string;
 
    
   constructor(private ps: PrestationsService) { }
 
   ngOnInit() {
+    this.title = 'Prestation';
+    this.subtitle = 'Toutes les prez';
       this.ps.collection.subscribe((data) => {
           this.collection = data;
       })

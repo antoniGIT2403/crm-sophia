@@ -23,3 +23,20 @@
     background: $color-success;
   }
 }
+
+
+
+app-template-a {
+  .tableau-light {
+    .state-option {
+      background: $color2;
+    }
+  }
+}
+app-template-b {
+  .tableau-light {
+    .state-option {
+      background: $color1;
+    }
+  }
+}
