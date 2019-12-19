@@ -3,6 +3,7 @@ import { Prestation } from 'src/app/shared/models/prestation';
 import { Observable, Subscription } from 'rxjs';
 import { PrestationsService } from '../../services/prestations.service';
 import { State } from 'src/app/shared/enums/state.enum';
+import { ActivatedRoute } from '@angular/router';
 
 export const header: string[] = [
     'Type presta' ,
@@ -34,21 +35,36 @@ export class PagePrestationsComponent implements OnInit {
     title: string;
     subtitle: string;
 
+
+
    
-  constructor(private ps: PrestationsService) { }
+  constructor(private ps: PrestationsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.title = 'Prestation';
-    this.subtitle = 'Toutes les prez';
-      this.ps.collection.subscribe((data) => {
-          this.collection = data;
+    this.route.data.subscribe((data) => {
+        
+        this.title = data.title;
+        this.subtitle = data.subtitle;
+        console.log(data);
       })
+
+
+      this.title = 'Prestation';
+      this.subtitle = 'Toutes les prez';
+    this.Collection$= this.ps.collection;
+
+    //   this.ps.collection.subscribe((data) => {
+    //       this.collection = data;
+    //   })
       this.collectionTh = header;
     // this.sub = this.ps.obs$.subscribe((data) =>  { this.obs = data })
   }
 
   changeState(itemNikki: Prestation, event){
 this.ps.update(itemNikki, event.target.value).subscribe((res: Prestation) => {  itemNikki.state = res.state; });
+  }
+  popIn(){
+      
   }
   
 //   ngOnDestroy(){

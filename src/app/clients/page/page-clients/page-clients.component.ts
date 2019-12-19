@@ -3,6 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Client } from 'src/app/shared/models/client';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { ClientsService } from 'src/app/prestations/services/clients.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -30,9 +31,15 @@ export class PageClientsComponent implements OnInit {
   title: string;
   subtitle: string;
 
-  constructor(private cs: ClientsService) { }
+
+  constructor(private cs: ClientsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe((data) => {
+      console.log(data);
+      this.title = data.title;
+      this.subtitle = data.subtitle;
+    })
     this.title = 'Prestation';
     this.subtitle = 'Toutes les prez';
     this.cs.collection.subscribe((data) => {

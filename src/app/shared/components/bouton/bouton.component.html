@@ -1,0 +1,5 @@
+<!-- <button     routerLink="['route']"  routerLinkActive="active" > -->
+  <a  *ngIf="route"   [routerLink]="route"> {{label}}</a>
+
+  <a  *ngIf="href" [href]="href"> {{label}}</a>
+  <a *ngIf="click" (click)="onClick()"> {{label}}</a >

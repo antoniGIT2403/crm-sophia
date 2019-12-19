@@ -38,6 +38,11 @@ export class ClientsService {
         return this.http.patch(`${this.urlApi}/Clients/${item.id}`,obj);
       }
 
+      public add(item: Client){
+
+        return this.http.post(`${this.urlApi}/Clients`,item);
+      }
+
 }
 
 

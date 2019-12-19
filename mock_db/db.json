@@ -7,7 +7,7 @@
       "tjmHt": 1200,
       "nbJours": 10,
       "tva": 20,
-      "state": "Confirmé",
+      "state": "Annulé",
       "name": "Antoni",
       "email": "Antoni@gmail.com",
       "image": "some comment"
@@ -19,10 +19,37 @@
       "tjmHt": 1200,
       "nbJours": 20,
       "tva": 20,
-      "state": "Confirmé",
+      "state": "Option",
       "name": "aaaaaa",
       "email": "toto@gmail.com",
       "image": "zzzz"
+    },
+    {
+      "typePresta": "azeaz",
+      "client": "azeaze",
+      "tjmHt": 1200,
+      "tva": 20,
+      "nbJours": "1e",
+      "state": "Annulé",
+      "id": 3
+    },
+    {
+      "typePresta": "zeaze",
+      "client": "azeaz",
+      "tjmHt": 1200,
+      "tva": 20,
+      "nbJours": 1,
+      "state": "Option",
+      "id": 4
+    },
+    {
+      "typePresta": "ee",
+      "client": "ee",
+      "tjmHt": 1200,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "Option",
+      "id": 5
     }
   ],
   "clients": [
@@ -31,7 +58,7 @@
       "name": "Antoni",
       "email": "Antoni@gmail.com",
       "image": "./../../../../assets/img/IMG-3347.JPG",
-      "state": "Actif"
+      "state": "Inactif"
     },
     {
       "id": 2,
@@ -60,6 +87,13 @@
       "email": "DieuDonné@gmail.com",
       "image": "./../../../../assets/img/IMG-3350.JPG",
       "state": "Actif"
+    },
+    {
+      "name": "test",
+      "email": "test",
+      "image": "test",
+      "state": "Inactif",
+      "id": 6
     }
   ]
 }

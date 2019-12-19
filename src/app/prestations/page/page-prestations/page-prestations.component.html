@@ -2,8 +2,8 @@
 <app-tableau-light [collectionTh]="collectionTh">
 
     <p> test</p>
-    <tr *ngFor="let itemNikki of collection">
-
+    <tr *ngFor="let itemNikki of Collection$ | async">
+        <!-- le pipe async permet de faire le subscribe auto sans le ts (prend une observable en entrée) et le unscrib c'est une bonn pratique -->
 
         <td scope="col">{{ itemNikki.typePresta }}</td>
         <td scope="col">{{ itemNikki.client }}</td>
@@ -30,7 +30,12 @@
 
 
 </app-tableau-light>
+<app-bouton  label="Ajouter une prestation" route="add" ></app-bouton>
+
+<!-- property bindig : lorsqu'on binde avec un string : pas de [], sinon si. si boolean ou variable : []  et voir dif avec  interpolation--> 
 </app-template-a>
+
+
 <!-- <div class="table-responsive" ></div>
 <table class="table">
     <thead>
