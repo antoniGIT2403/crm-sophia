@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VersionService } from 'src/app/shared/services/version.service';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public title: string;
-  constructor() { }
+  public version: number;
+  public faCoffee = faCoffee;
+  constructor(private vs: VersionService) { }
 
   ngOnInit() {
+    this.version= this.vs.version;
     this.title = 'Formation Angular ';
   }
 

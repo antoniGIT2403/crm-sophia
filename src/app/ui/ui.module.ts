@@ -6,12 +6,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import {CoderbaseUiModule} from '@coderbase/ui';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [UiComponent, NavComponent, FooterComponent, HeaderComponent],
   exports: [UiComponent],
   imports: [
-    CommonModule, CoderbaseUiModule, RouterModule
+    CommonModule, CoderbaseUiModule, RouterModule,  FontAwesomeModule
   ]
 })
 export class UiModule { }

@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { CommentComponent } from '../shared/components/comment/comment.component';
+import { DetailComponent } from '../shared/components/detail/detail.component';
+import { PageAddPrestationComponent } from './page/page-add-prestation/page-add-prestation.component';
 import { PagePrestationsComponent } from './page/page-prestations/page-prestations.component';
 
-import { Routes, RouterModule } from '@angular/router';
-import { PageAddPrestationComponent } from './page/page-add-prestation/page-add-prestation.component';
 
 
 
 const routes: Routes = [
   { path: '', component: PagePrestationsComponent,
-  data: { title : 'Prestation', subtitle: 'Toutes les Prestation'}
+  data: { title : 'Prestation', subtitle: 'Toutes les Prestation'},
+  children: [
+    { path: '', redirectTo: 'comment', pathMatch: 'full'},
+    { path: 'comment', component: CommentComponent},
+    { path: 'detail', component: DetailComponent},
+  ]
 },
 
   { path: 'add',
@@ -30,6 +36,9 @@ const routes: Routes = [
     RouterModule.forChild(
       routes)
 
+  ],
+  exports:[
+    RouterModule
   ]
 })
 

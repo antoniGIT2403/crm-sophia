@@ -2,6 +2,8 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Client } from 'src/app/shared/models/client';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
+import { HttpClient } from '@angular/common/http';
+import { PrestationsService } from 'src/app/prestations/services/prestations.service';
 
 
 @Component({
@@ -16,10 +18,15 @@ export class FormClientComponent implements OnInit {
   public form: FormGroup;
   public states = StateClient;
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private ps: PrestationsService
   ) { }
 
   ngOnInit() {
+
+    // if (this.init){
+    //   this.init = this.ps.getById()
+    // }
     this.createForm();
   }
   private createForm() {

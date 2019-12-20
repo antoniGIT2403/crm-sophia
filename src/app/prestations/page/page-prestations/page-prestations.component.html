@@ -1,38 +1,51 @@
-<app-template-a  [title]="title" [subtitle]="subtitle" >
-<app-tableau-light [collectionTh]="collectionTh">
+<app-template-a [title]="title" [subtitle]="subtitle">
+    <app-tableau-light [collectionTh]="collectionTh">
 
-    <p> test</p>
-    <tr *ngFor="let itemNikki of Collection$ | async">
-        <!-- le pipe async permet de faire le subscribe auto sans le ts (prend une observable en entrée) et le unscrib c'est une bonn pratique -->
+        <p> test</p>
+        <tr (click)="setFirstItem(itemNikki)" *ngFor="let itemNikki of Collection$ | async">
+            <!-- le pipe async permet de faire le subscribe auto sans le ts (prend une observable en entrée) et le unscrib c'est une bonn pratique -->
 
-        <td scope="col">{{ itemNikki.typePresta }}</td>
-        <td scope="col">{{ itemNikki.client }}</td>
-        <td scope="col">{{ itemNikki.tjmHt | currency  : 'EUR'}}</td>
-        <td scope="col">{{ itemNikki.tva }}</td>
-        <td scope="col">{{ itemNikki.nbJours }}</td>
+            <td scope="col">{{ itemNikki.typePresta }}</td>
+            <td scope="col">{{ itemNikki.client }}</td>
+            <td scope="col">{{ itemNikki.tjmHt | currency  : 'EUR'}}</td>
+            <td scope="col">{{ itemNikki.tva }}</td>
+            <td scope="col">{{ itemNikki.nbJours }}</td>
 
-        <td scope="col">{{ itemNikki | total | currency : 'EUR' }}</td>
-        <td scope="col">{{ itemNikki | total: 'ttc' | currency : 'EUR' }}</td>
-
-
-        <td scope="col" [appState]='itemNikki.state'>
-            <select name="" id="" (change)='changeState(itemNikki,$event)'>
-                <option *ngFor="let state of states | keyvalue" [value]="state.value"
-                    [selected]="state.value === itemNikki.state">
-                    {{ state.value }}
-                </option>
+            <td scope="col">{{ itemNikki | total | currency : 'EUR' }}</td>
+            <td scope="col">{{ itemNikki | total: 'ttc' | currency : 'EUR' }}</td>
 
 
-            </select>
+            <td scope="col" [appState]='itemNikki.state'>
+                <select name="" id="" (change)='changeState(itemNikki,$event)' (click)="$event.stopPropagation()">
+                    <option *ngFor="let state of states | keyvalue" [value]="state.value"
+                        [selected]="state.value === itemNikki.state">
+                        {{ state.value }}
+                    </option>
 
-        </td>
-    </tr>
+
+                </select>
+
+            </td>
+
+            <td scope="col">
+                <app-bouton label="Mettre à jour" [route]="['add', itemNikki.id] "></app-bouton>
+                <!-- <app-bouton (click)="redirect(itemNikki.state)"  ></app-bouton> -->
+            </td>
+            <td scope="col">
+                <app-bouton label="Supprimer" [route]="itemNikki.id"></app-bouton>
+            </td>
+        </tr>
 
 
-</app-tableau-light>
-<app-bouton  label="Ajouter une prestation" route="add" ></app-bouton>
+    </app-tableau-light>
+    <app-bouton label="Ajouter une prestation" route="add"></app-bouton>
 
-<!-- property bindig : lorsqu'on binde avec un string : pas de [], sinon si. si boolean ou variable : []  et voir dif avec  interpolation--> 
+    <!-- property bindig : lorsqu'on binde avec un string : pas de [], sinon si. si boolean ou variable : []  et voir dif avec  interpolation-->
+
+    <app-sous-nav [sousRoutes]="sousRoutes"> </app-sous-nav>
+
+
+    <router-outlet></router-outlet>
 </app-template-a>
 
 

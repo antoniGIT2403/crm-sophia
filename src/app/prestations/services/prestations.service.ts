@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Prestation } from 'src/app/shared/models/prestation';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -15,10 +15,14 @@ export class PrestationsService {
   //exemple observables et unscribes()
 
   public obs = new Observable((observers) => { observers.next(['chris','antoni','cedric'] ) } )
+  firstPresta$: BehaviorSubject<Prestation> = new BehaviorSubject(null);
 
   constructor(private http: HttpClient) {
     this.collection = this.http.get<Prestation[]>(`${this.urlApi}/prestations`).pipe(
       map((tab) => {
+        if(tab.length > 0){
+          this.firstPresta$.next(tab[0]);
+        }
         return tab.map((obj) => {
           return new Prestation(obj);
         });
@@ -58,5 +62,11 @@ public add(item: Prestation){
 
   return this.http.post(`${this.urlApi}/prestations`,item);
 }
+
+// public getById(id: number){
+//   const url = `${this.urlApi}/${id}`;
+
+//   return this.http.get(url);!
+// }
 
 }

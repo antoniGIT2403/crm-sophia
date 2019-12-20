@@ -4,6 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { PrestationsService } from '../../services/prestations.service';
 import { State } from 'src/app/shared/enums/state.enum';
 import { ActivatedRoute } from '@angular/router';
+import { PrestationI } from 'src/app/shared/interfaces/prestation-i';
 
 export const header: string[] = [
     'Type presta' ,
@@ -34,6 +35,7 @@ export class PagePrestationsComponent implements OnInit {
     private sub: Subscription;
     title: string;
     subtitle: string;
+    public sousRoutes: {route: string, label: string} [];
 
 
 
@@ -41,6 +43,11 @@ export class PagePrestationsComponent implements OnInit {
   constructor(private ps: PrestationsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+      this.sousRoutes= [ 
+          {route: 'comment', label: 'Commentaires'},
+          {route: 'detail', label: 'Détails'}
+        
+        ]
     this.route.data.subscribe((data) => {
         
         this.title = data.title;
@@ -65,6 +72,10 @@ this.ps.update(itemNikki, event.target.value).subscribe((res: Prestation) => {  
   }
   popIn(){
       
+  }
+
+  setFirstItem(itemNikki:PrestationI){
+this.ps.firstPresta$.next(itemNikki);
   }
   
 //   ngOnDestroy(){

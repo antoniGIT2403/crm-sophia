@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VersionService } from 'src/app/shared/services/version.service';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   footer: string;
-  constructor() { }
+  public version: number;
+  public faCoffee = faCoffee;
+  constructor(public vs: VersionService) { }
 
   ngOnInit() {
+
+    this.version = this.vs.version;
     this.footer = 'm2i formation';
   }
 
 }
+

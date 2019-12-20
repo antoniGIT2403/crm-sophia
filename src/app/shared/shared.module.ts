@@ -7,16 +7,19 @@ import { TableauLightComponent } from './components/tableau-light/tableau-light.
 import { TemplateModule } from '../template/template.module';
 import { BoutonComponent } from './components/bouton/bouton.component';
 import { RouterModule } from '@angular/router';
+import { CommentComponent } from './components/comment/comment.component';
+import { DetailComponent } from './components/detail/detail.component';
+import { SousNavComponent } from './components/sous-nav/sous-nav.component';
 
 
 
 @NgModule({
-  declarations: [TotalPipe, StateDirective, TableauDarkComponent, TableauLightComponent, BoutonComponent],
+  declarations: [TotalPipe, StateDirective, TableauDarkComponent, TableauLightComponent, BoutonComponent, CommentComponent, DetailComponent, SousNavComponent],
   imports: [
     CommonModule,
     TemplateModule,
     RouterModule
   ],
-  exports: [TotalPipe, StateDirective, TableauDarkComponent, TableauLightComponent, TemplateModule,BoutonComponent]
+  exports: [TotalPipe, StateDirective, TableauDarkComponent, TableauLightComponent, TemplateModule,BoutonComponent,CommentComponent, DetailComponent, SousNavComponent]
 })
 export class SharedModule { }

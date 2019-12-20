@@ -11,6 +11,7 @@ export class Prestation implements PrestationI{
   tva = 20;
   nbJours = 1;
   state = State.OPTION;
+  comment: string;
   constructor(obj?: Partial<Prestation>) {
     if (obj) {
       Object.assign(this , obj);
